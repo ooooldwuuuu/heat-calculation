@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 20px;
+}
+
+.pageDiv {
+    padding: 30px 40px;
+}
+
+.rowDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.inputDiv {
+    display: flex;
+    justify-content: flex-start;
+}
+.field {
+    margin-right: 10px;
+    width: 200px;
+    text-align: right;
+}

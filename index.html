@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <title>熱計算</title>
+</head>
+<body>
+    <div class="pageDiv">
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <span class="field">設計條件</span>
+                <input type="text">
+            </div>
+            <div class="inputDiv">
+                <span class="field">設計壓力(kg/cm<sup>2</sup>G)</span>
+                <input type="text">
+            </div>
+            <div class="inputDiv">
+                <span class="field">操作壓力(kg/cm<sup>2</sup>G)</span>
+                <input type="text">
+            </div>           
+        </div>
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <span class="field">蒸氣量(kg/hr)</span>
+                <input type="text">
+            </div>
+            <div class="inputDiv">
+                <span class="field">蒸氣溫度&#8451;</span>
+                <input type="text">
+            </div>  
+            <div class="inputDiv">
+                <span class="field">鍋爐給水溫度&#8451;</span>
+                <input type="text">
+            </div> 
+        </div>
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <span class="field">廢氣組成:</span>
+            </div>
+        </div>
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <div class="inputDiv">
+                    <span class="field">CO<sub>2</sub>:</span>
+                    <input class="gas_weight" type="text" onblur="calVolume(event, 'CO2')">
+                    <span>kg/hr x 22.4 / 44.01 = </span>
+                    <span id="result_CO2" class="gas_volume"></span>
+                    <span>Nm<sup>3</sup>/hr</span>
+                </div>
+                <div class="inputDiv">
+                    <span id="vol_CO2" class="field"></span>
+                    <span>vol%</span>
+                </div>
+            </div>
+        </div>
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <div class="inputDiv">
+                    <span class="field">H<sub>2</sub>O:</span>
+                    <input class="gas_weight" type="text" onblur="calVolume(event, 'H2O')">
+                    <span>kg/hr x 22.4 / 18.02 = </span>
+                    <span id="result_H2O" class="gas_volume"></span>
+                    <span>Nm<sup>3</sup>/hr</span>
+                </div>
+                <div class="inputDiv">
+                    <span id="vol_H2O" class="field"></span>
+                    <span>vol%</span>
+                </div>
+            </div>
+        </div>
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <div class="inputDiv">
+                    <span class="field">N<sub>2</sub>:</span>
+                    <input class="gas_weight" type="text" onblur="calVolume(event, 'N2')">
+                    <span>kg/hr x 22.4 / 28.02 = </span>
+                    <span id="result_N2" class="gas_volume"></span>
+                    <span>Nm<sup>3</sup>/hr</span>
+                </div>
+                <div class="inputDiv">
+                    <span id="vol_N2" class="field"></span>
+                    <span>vol%</span>
+                </div>
+            </div>
+        </div>
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <div class="inputDiv">
+                    <span class="field">SO<sub>2</sub>:</span>
+                    <input class="gas_weight" type="text" onblur="calVolume(event, 'SO2')">
+                    <span>kg/hr x 22.4 / 64.06 = </span>
+                    <span id="result_SO2" class="gas_volume"></span>
+                    <span>Nm<sup>3</sup>/hr</span>
+                </div>
+                <div class="inputDiv">
+                    <span id="vol_SO2" class="field"></span>
+                    <span>vol%</span>
+                </div>
+            </div>
+        </div>
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <div class="inputDiv">
+                    <span class="field">HCl:</span>
+                    <input class="gas_weight" type="text" onblur="calVolume(event, 'HCl')">
+                    <span>kg/hr x 22.4 / 36.5 = </span>
+                    <span id="result_HCl" class="gas_volume"></span>
+                    <span>Nm<sup>3</sup>/hr</span>
+                </div>
+                <div class="inputDiv">
+                    <span id="vol_HCl" class="field"></span>
+                    <span>vol%</span>
+                </div>
+            </div>
+        </div>
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <div class="inputDiv">
+                    <span class="field">O<sub>2</sub>:</span>
+                    <input class="gas_weight" type="text" onblur="calVolume(event, 'O2')">
+                    <span>kg/hr x 22.4 / 32 = </span>
+                    <span id="result_O2" class="gas_volume"></span>
+                    <span>Nm<sup>3</sup>/hr</span>
+                </div>
+                <div class="inputDiv">
+                    <span id="vol_O2" class="field"></span>
+                    <span>vol%</span>
+                </div>
+            </div>
+        </div>
+        <div class="rowDiv">
+            <div class="inputDiv">
+                <div class="inputDiv">
+                    <span class="field">Total:</span>
+                    <span id="weight_total"></span>
+                    <span>kg/hr</span>
+                </div>
+                <div class="inputDiv">
+                    <span class="field">Total:</span>
+                    <span id="volume_total"></span>
+                    <span>Nm<sup>3</sup>/hr</span>
+                </div>
+                <div class="inputDiv">
+                    <span class="field">100</span>
+                    <span>vol%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
